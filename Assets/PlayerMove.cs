@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public float speedMove;
     public Vector2 movement;
 
+    public Joystick joystickMovement;
 
     void Start()
     {
@@ -18,6 +19,9 @@ public class PlayerMove : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        movement.x = joystickMovement.Horizontal;
+        movement.y = joystickMovement.Vertical;
     }
 
     void FixedUpdate()
